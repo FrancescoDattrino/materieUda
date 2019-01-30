@@ -16,6 +16,7 @@ import applicationUdaModel.DisciplineCoinvolteIdMap;
 import applicationUdaModel.Materia;
 import applicationUdaModel.MateriaIdMap;
 import applicationUdaModel.Sezione;
+import applicationUdaModel.UdaFromMateria;
 
 public class DisciplineCoinvolteDAO {
 
@@ -106,6 +107,32 @@ public class DisciplineCoinvolteDAO {
 		}
 		return false ;
 		
+	}
+
+	public List<UdaFromMateria> getUda(DisciplineCoinvolte dc) {
+		String sql="select dc.uda,cs.competenzaSecondaria,m.nomeMateria,dc.ore,dc.peso,dc.dataInizio,dc.dataFine,c.nomeClasse,s.nomeSezione " + 
+				" from competenzesecondarie as cs,disciplinecoinvolte as dc,materia as m,classe as c,sezione as s " + 
+				" where m.idMateria=dc.codMateria and cs.codCompetenzaSecondaria=dc.codCompetenzaSecondaria and c.CodClasse=dc.codClasse " + 
+				" and s.codSezione=dc.codSezione and dc.codDisciplineCoinvolte=?";
+		List<UdaFromMateria> result=new ArrayList<>();
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql) ;
+			st.setInt(1, dc.getCodDisciplineCoinvolte() );
+			ResultSet res = st.executeQuery() ;
+			while(res.next()) {				
+				UdaFromMateria udaFromMateria=new UdaFromMateria(res.getString("uda"),res.getString("competenzaSecondaria"),
+						res.getString("nomeMateria"),res.getInt("ore"),res.getInt("peso"),res.getDate("dataInizio").toLocalDate(),
+						res.getDate("dataFine").toLocalDate(),res.getString("nomeclasse"),res.getString("nomeSezione"));
+				
+				result.add(udaFromMateria);
+			}			
+			conn.close();
+			return result;
+		} catch (SQLException e) {
+			throw new RuntimeException(e) ;
+		}
+				
 	}
 		
 	

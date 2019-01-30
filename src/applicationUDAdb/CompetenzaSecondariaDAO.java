@@ -13,6 +13,8 @@ import applicationUdaModel.CompetenzaSecondariaIdMap;
 import applicationUdaModel.Competenze;
 import applicationUdaModel.CompetenzeIdMap;
 import applicationUdaModel.CompetenzeSecondarie;
+import applicationUdaModel.Materia;
+import applicationUdaModel.UdaFromMateria;
 
 
 public class CompetenzaSecondariaDAO {
@@ -96,6 +98,31 @@ public boolean create(CompetenzeSecondarie c) {
 	}
 	return false ;
 	
+}
+
+public List<UdaFromMateria> getUdaFromCompetenza(CompetenzeSecondarie cs){
+	String sql="select dc.uda,cs.competenzaSecondaria,m.nomeMateria,dc.ore,dc.peso,dc.dataInizio,dc.dataFine,c.nomeClasse,s.nomeSezione  "+
+			" from competenzesecondarie as cs,disciplinecoinvolte as dc,materia as m,classe as c,sezione as s "+
+			" where m.idMateria=dc.codMateria AND cs.codCompetenzaSecondaria = ? and c.CodClasse=dc.codClasse "+
+			" and s.codSezione=dc.codSezione AND dc.codMateria=m.idMateria AND cs.codCompetenzaSecondaria=dc.codCompetenzaSecondaria";
+	List<UdaFromMateria> result=new ArrayList<>();
+	try {
+		Connection conn = ConnectDB.getConnection();
+		PreparedStatement st = conn.prepareStatement(sql) ;
+		st.setInt(1, cs.getCodCompetenzaSecondaria() );
+		ResultSet res = st.executeQuery() ;
+		while(res.next()) {				
+			UdaFromMateria udaFromMateria=new UdaFromMateria(res.getString("uda"),res.getString("competenzaSecondaria"),
+					res.getString("nomeMateria"),res.getInt("ore"),res.getInt("peso"),res.getDate("dataInizio").toLocalDate(),
+					res.getDate("dataFine").toLocalDate(),res.getString("nomeclasse"),res.getString("nomeSezione"));
+			
+			result.add(udaFromMateria);
+		}			
+		conn.close();
+		return result;
+	} catch (SQLException e) {
+		throw new RuntimeException(e) ;
+	}
 }
 
 

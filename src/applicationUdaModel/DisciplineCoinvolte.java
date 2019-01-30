@@ -143,8 +143,9 @@ public class DisciplineCoinvolte {
 	}
 	@Override
 	public String toString() {
-		return "DisciplineCoinvolte [uda = "+uda+", ore=" + ore + ", peso=" + peso + ", argomento=" + argomento + ", dataInizio="
-				+ dataInizio + ", dataFine=" + dataFine + "]";
+		return uda;
+				//"DisciplineCoinvolte [uda = "+uda+", ore=" + ore + ", peso=" + peso + ", argomento=" + argomento + ", dataInizio="
+				//+ dataInizio + ", dataFine=" + dataFine + "]";
 	}
 	
 	

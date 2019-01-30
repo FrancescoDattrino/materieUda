@@ -78,128 +78,13 @@
       </VBox>
    </top>
    <center>
-      <VBox fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" BorderPane.alignment="CENTER">
+      <VBox fillWidth="false" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="504.0" prefWidth="1314.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox>
-               <children>
-                  <Label text="UDA">
-                     <HBox.margin>
-                        <Insets left="10.0" right="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtUda" prefHeight="31.0" prefWidth="555.0" />
-               </children>
-            </HBox>
-            <HBox>
-               <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin>
-               <children>
-                  <Label text="Allegato">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="comboAllegato" prefHeight="31.0" prefWidth="283.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin></ComboBox>
-                  <Label text="Classe">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="comboClasse" prefWidth="150.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin></ComboBox>
-                  <Label text="Sezione">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="comboSezione" prefHeight="31.0" prefWidth="176.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ComboBox>
-                  <Button fx:id="btnAttivaBoxComPrim" mnemonicParsing="false" onAction="#onAttivaBoxComPrim" text="Attiva box Comp. prim. e Materia">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Button fx:id="btnAttivaCompSec" mnemonicParsing="false" onAction="#onAttivaCompSec" text="Attiva Comp. sec.">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-               </children>
-            </HBox>
-            <HBox>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <padding>
-                  <Insets bottom="5.0" left="5.0" right="5.0" />
-               </padding>
-               <children>
-                  <Label text="Competenza primaria">
-                     <HBox.margin>
-                        <Insets bottom="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="comboComPrim" prefHeight="31.0" prefWidth="1153.0" />
-               </children>
-            </HBox>
-            <HBox fillHeight="false" maxHeight="1.7976931348623157E308">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-               <children>
-                  <Label text="Competenza secondaria">
-                     <HBox.margin>
-                        <Insets bottom="10.0" right="5.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <ComboBox fx:id="comboComSec" prefHeight="31.0" prefWidth="1140.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </ComboBox>
-               </children>
-            </HBox>
-            <HBox>
-               <VBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </VBox.margin>
-               <children>
-                  <Button fx:id="btnNuovaComp" mnemonicParsing="false" onAction="#onNuovaComp" text="Nuova competenza">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
-                  <Label text="Competenza secondarie">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextArea fx:id="txtCompetenzaSecondaria" disable="true" editable="false" prefHeight="144.0" prefWidth="963.0" wrapText="true">
-                     <HBox.margin>
-                        <Insets />
-                     </HBox.margin>
-                  </TextArea>
-               </children>
-            </HBox>
             <HBox>
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
                <children>
-                  <Button fx:id="btnInserisciCompSec" mnemonicParsing="false" onAction="#onInserisciCompSec" text="Inserisci nuova competenza secondaria">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Button>
                   <Label text="Materia">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -210,82 +95,56 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </ComboBox>
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Label text="ore dedicate">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtOreDedicate" prefHeight="31.0" prefWidth="36.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Label text="peso %">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextField fx:id="txtPeso" prefHeight="31.0" prefWidth="57.0">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </TextField>
-                  <Label text="argomento">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <TextArea fx:id="txtArgomento" prefHeight="51.0" prefWidth="827.0" />
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Label text="Periodo">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <Label text="dal">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <DatePicker fx:id="comboInizio">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </DatePicker>
-                  <Label text="al">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin>
-                  </Label>
-                  <DatePicker fx:id="comboFine">
-                     <HBox.margin>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </HBox.margin></DatePicker>
-                  <Button fx:id="btnSalvaDati" mnemonicParsing="false" onAction="#onSalvaDati" text="Salva dati Competenza Secondaria">
+                  <Button fx:id="btnUdaFromMateria" mnemonicParsing="false" onAction="#onUdaFromMateria" text="visualizza Uda per la materia selezionata">
                      <HBox.margin>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
+            <HBox>
+               <children>
+                  <Label text="Uda">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="comboUda" prefHeight="31.0" prefWidth="640.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="btnUda" mnemonicParsing="false" onAction="#onUdaContenuti" text="visualizza Uda ">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Label text="Competenze">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="comboCompetenze" prefHeight="31.0" prefWidth="640.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </ComboBox>
+                  <Button fx:id="btnompetenze" mnemonicParsing="false" onAction="#onCompetenzeContenuti" text="visualizza Competenze secondarie">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TextArea fx:id="txtResult" prefHeight="441.0" prefWidth="1314.0" />
          </children>
          <BorderPane.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </BorderPane.margin>
       </VBox>
    </center>
-   <bottom>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <TextArea fx:id="txtResult" prefHeight="200.0" prefWidth="200.0" />
-         </children>
-      </VBox>
-   </bottom>
 </BorderPane>

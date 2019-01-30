@@ -10,6 +10,7 @@ import applicationUDAdb.CompetenzeDAO;
 import applicationUDAdb.DisciplineCoinvolteDAO;
 import applicationUDAdb.MateriaDAO;
 import applicationUDAdb.SezioneDAO;
+//import applicationUda.UdaFromMateria;
 
 
 
@@ -111,13 +112,6 @@ public class Model {
 		
 						
 		
-/*	
-		System.out.println("Numero materie = "+ materie.size());
-		System.out.println("numero classi = "+classi.size());
-		System.out.println("numero sezioni = "+sezioni.size());
-		System.out.println("numero allegati = "+allegati.size());
-		System.out.println("numero competenze = "+ competenze.size());
-		System.out.println("numero classisezioni = "+classisezioni.size());*/
 	}
 
 
@@ -162,6 +156,7 @@ public MateriaDAO getMtrdao() {
 public void setMtrdao(MateriaDAO mtrdao) {
 	this.mtrdao = mtrdao;
 }
+
 
 
 public List<Sezione> getSezioni() {
@@ -289,6 +284,41 @@ public List<Sezione> getSezioni() {
 			disciplinecoinvolte=dscdao.listaDisciplineCoinvolte(disciplinecoinvoltemap);
 		}
 		return result ;	
+	}
+
+
+	public void setMaterie(List<Materia> materie) {
+		this.materie = materie;
+	}
+
+
+	public List<Materia> getMaterie() {
+		
+		return this.materie;
+	}
+
+
+	public List<UdaFromMateria> cercaUdaFromMateria(Materia m) {
+		MateriaDAO dao=new MateriaDAO();
+		return dao.getUdaFromMateria(m);
+		
+	}
+
+
+	public List<DisciplineCoinvolte> getDisciplinecoinvolte() {
+		return disciplinecoinvolte;
+	}
+
+
+	public List<UdaFromMateria> cercaUda(DisciplineCoinvolte dc) {
+		DisciplineCoinvolteDAO dao =new DisciplineCoinvolteDAO();
+		return dao.getUda(dc);
+	}
+
+
+	public List<UdaFromMateria> cercaCompetenza(CompetenzeSecondarie cs) {
+		CompetenzaSecondariaDAO dao =new CompetenzaSecondariaDAO();
+		return dao.getUdaFromCompetenza(cs);
 	}
 	
 }
